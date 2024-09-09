@@ -10,7 +10,7 @@
     <style>
         body {
 
-            background-image: url("cuttle.jpg");
+            background-image: url("./cuttle.jpg");
             background-size: 2000px;
         }
         .sillydiv {
@@ -29,13 +29,14 @@
     </div>
 </body>
 <script>
-    function httpGet(theUrl)
-    {
+    function httpGet(theUrl){
+        // no need for headers; public google doc!!!
         var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open("GET", theUrl, false ); // false for synchronous request
+        xmlHttp.open("GET", theUrl, false ); 
         xmlHttp.send();
         return xmlHttp.responseText;
     }
-    console.log(httpGet("https://docs.google.com/document/u/0/d/1fNSQeLaIlzSeoQW5XVtM-S5_vAf2w_PIasLvEByI5IA/mobilebasic"))
+    var data = httpGet("https://docs.google.com/document/u/0/d/1fNSQeLaIlzSeoQW5XVtM-S5_vAf2w_PIasLvEByI5IA/mobilebasic");
+    
 </script>
 </html>
