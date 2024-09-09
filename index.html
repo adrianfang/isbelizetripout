@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/favicon.ico" />
+    <title>Have they posted the registration link?</title>
+    <style>
+        body {
+
+            background-image: url("./cuttle.jpg");
+            background-size: 2000px;
+        }
+        .sillydiv {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sillydiv">
+        <h1 id="havethey">Let's find out.</h1>
+    </div>
+</body>
+<script>
+    function httpGet(theUrl)
+    {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", theUrl, false ); // false for synchronous request
+        xmlHttp.send();
+        return xmlHttp.responseText;
+    }
+    console.log(httpGet("https://docs.google.com/document/u/0/d/1fNSQeLaIlzSeoQW5XVtM-S5_vAf2w_PIasLvEByI5IA/mobilebasic"))
+</script>
+</html>
