@@ -13,6 +13,10 @@
             background-image: url("./cuttle.jpg");
             background-size: 2000px;
         }
+        h1 {
+            color: white;
+            font-family: sans-serif;
+        }
         .sillydiv {
             display: flex;
             justify-content: center;
@@ -37,6 +41,25 @@
         return xmlHttp.responseText;
     }
     var data = httpGet("https://docs.google.com/document/u/0/d/1fNSQeLaIlzSeoQW5XVtM-S5_vAf2w_PIasLvEByI5IA/mobilebasic");
+    var k = data.split("February")[data.split("February").length-1]
+    if(k.length != 1){
+        var g = k.split('<span style="color:#222222;font-weight:700;text-decoration:none;vertical-align:baseline;font-size:12pt;font-family:&quot;Arial&quot;;font-style:normal">')
+        var DIVING = true;    
+        for(var i = 0; i < g.length; i ++){
+            if(g[i].includes("Registration opens soon!")){
+                DIVING = false;
+            }
+        }
+        if(DIVING){
+            document.getElementById("havethey").Innertext = "YESSS! GO REGISTER!!!"   
+            
+        }else{
+            document.getElementById("havethey").innerHTML = "No :("
+        }
+    }
+    else{
+        document.getElementById("havethey").innerHTML = "Something's odd. There appears to be an issue..."
+    }
     
 </script>
 </html>
