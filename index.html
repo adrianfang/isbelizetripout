@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="icon" href="https://ih1.redbubble.net/image.5244865037.7285/flat,750x,075,f-pad,750x1000,f8f8f8.jpg" />
     <title>Have they posted the registration link?</title>
     <style>
         body {
@@ -29,10 +29,11 @@
 
 <body>
     <div class="sillydiv">
-        <h1 id="havethey">Let's find out.</h1>
+        <h1 id="havethey">Something's odd. There appears to be an issue...</h1>
     </div>
 </body>
 <script>
+    // Bad code, I know. I just want it to work.
     function httpGet(theUrl){
         // no need for headers; public google doc!!!
         var xmlHttp = new XMLHttpRequest();
@@ -45,22 +46,15 @@
     if(k.length != 1){
         var g = k.split('<span style="color:#222222;font-weight:700;text-decoration:none;vertical-align:baseline;font-size:12pt;font-family:&quot;Arial&quot;;font-style:normal">')
         var DIVING = true;    
-        for(var i = 0; i < g.length; i ++){
+        for(var i = 0; i < g.length && DIVING; i ++){
             if(g[i].includes("Registration opens soon!")){
                 DIVING = false;
-                break;
+                document.getElementById("havethey").innerHTML = "No :("
             }
         }
         if(DIVING){
-            document.getElementById("havethey").Innertext = "YESSS! GO REGISTER!!!"   
-            
-        }else{
-            document.getElementById("havethey").innerHTML = "No :("
+            document.getElementById("havethey").Innertext = "YESSS! GO REGISTER!!!"      
         }
     }
-    else{
-        document.getElementById("havethey").innerHTML = "Something's odd. There appears to be an issue..."
-    }
-    
 </script>
 </html>
